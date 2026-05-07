@@ -41,7 +41,7 @@ with st.expander("Kişisel Bilgiler", expanded=True):
     gender_tr = st.selectbox("Cinsiyet:", list(gender_map.keys()))
     rel_tr = st.selectbox("İlişki Durumu:", list(rel_map.keys()))
     occ_tr = st.selectbox("Meslek:", list(occ_map.keys()))
-    org = st.text_input("Bağlı olduğunuz kurum (Okul/Şirket):", "N/A")
+    org = st.text_input("Bağlı olduğunuz kurum (Okul/Şirket):", "-")
 
 # 2. BÖLÜM: SOSYAL MEDYA
 with st.expander("Sosyal Medya Kullanımı"):
@@ -52,18 +52,18 @@ with st.expander("Sosyal Medya Kullanımı"):
 
 # 3. BÖLÜM: PSİKOLOJİK SORULAR
 with st.expander("Değerlendirme (1: Hiç, 5: Çok Fazla)"):
-    q9 = st.slider("9. Belirli bir amaç olmadan sosyal medyayı ne sıklıkla kullanıyorsunuz?", 1, 5, 3)
-    q10 = st.slider("10. Bir şeyle meşgulken sosyal medya ne sıklıkla sizin dikkatinizi dağıtıyor?", 1, 5, 3)
-    q11 = st.slider("11. Bir süre sosyal medya kullanmadığınızda huzursuz hissediyor musunuz?", 1, 5, 3)
-    q12 = st.slider("12. Ne kadar kolay dikkatiniz dağılıyor?", 1, 5, 3)
-    q13 = st.slider("13. Endişelerden ne kadar rahatsız oluyorsunuz?", 1, 5, 3)
-    q14 = st.slider("14. Konsantre olmakta zorlanıyor musunuz?", 1, 5, 3)
-    q15 = st.slider("15. Kendinizi diğer başarılı insanlarla ne sıklıkla karşılaştırıyorsunuz?", 1, 5, 3)
-    q16 = st.slider("16. Önceki soruyu takiben, genel olarak bu karşılaştırmalardan ne kadar etkileniyorsunuz?", 1, 5, 3)
-    q17 = st.slider("17. Onay (beğeni, yorum vb.) arama sıklığınız nedir?", 1, 5, 3)
-    q18 = st.slider("18. Depresif veya üzgün hissetme sıklığınız nedir?", 1, 5, 3)
-    q19 = st.slider("19. Günlük aktivitelere olan ilginiz ne sıklıkla dalgalanıyor?", 1, 5, 3)
-    q20 = st.slider("20. Ne sıklıkla uyku sorunlarıyla karşılaşıyorsunuz?", 1, 5, 3)
+    q9 = st.slider("Belirli bir amaç olmadan sosyal medyayı ne sıklıkla kullanıyorsunuz?", 1, 5, 3)
+    q10 = st.slider("Bir şeyle meşgulken sosyal medya ne sıklıkla sizin dikkatinizi dağıtıyor?", 1, 5, 3)
+    q11 = st.slider("Bir süre sosyal medya kullanmadığınızda huzursuz hissediyor musunuz?", 1, 5, 3)
+    q12 = st.slider("Ne kadar kolay dikkatiniz dağılıyor?", 1, 5, 3)
+    q13 = st.slider("Endişelerden ne kadar rahatsız oluyorsunuz?", 1, 5, 3)
+    q14 = st.slider("Konsantre olmakta zorlanıyor musunuz?", 1, 5, 3)
+    q15 = st.slider("Kendinizi diğer başarılı insanlarla ne sıklıkla karşılaştırıyorsunuz?", 1, 5, 3)
+    q16 = st.slider("Önceki soruyu takiben, genel olarak bu karşılaştırmalardan ne kadar etkileniyorsunuz?", 1, 5, 3)
+    q17 = st.slider("Onay (beğeni, yorum vb.) arama sıklığınız nedir?", 1, 5, 3)
+    q18 = st.slider("Depresif veya üzgün hissetme sıklığınız nedir?", 1, 5, 3)
+    q19 = st.slider("Günlük aktivitelere olan ilginiz ne sıklıkla dalgalanıyor?", 1, 5, 3)
+    q20 = st.slider("Ne sıklıkla uyku sorunlarıyla karşılaşıyorsunuz?", 1, 5, 3)
     # Diğer soruları da buraya ekleyebilirsin...
 
 if st.button("ANALİZ ET"):
