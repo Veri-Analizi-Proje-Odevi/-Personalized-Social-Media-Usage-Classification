@@ -19,10 +19,11 @@ except:
     st.error("Model dosyaları yüklenemedi!")
     st.stop()
 
-st.title("🧠 Sosyal Medya ve Psikolojik Sağlık")
-st.write("Anketi doldurarak yapay zeka analizini başlatın.")
+st.title("🧠 Sosyal Medya ve Psikolojik Sağlık Analizi")
+st.write("Lütfen aşağıdaki anketi doldurunuz. Modelimiz risk durumunuzu anlık olarak analiz edecektir.")
 
 # --- TÜRKÇE -> İNGİLİZCE MAPPING SÖZLÜKLERİ ---
+answer_map = {"Evet": "Yes", "Hayır": "No"}
 gender_map = {"Erkek": "Male", "Kadın": "Female", "Diğer": "Non-binary"}
 rel_map = {"Bekar": "Single", "Evli": "Married", "İlişkisi var": "In a relationship", "Boşanmış": "Divorced"}
 occ_map = {"Üniversite Öğrencisi": "University Student", "Okul Öğrencisi": "School Student", "Çalışan": "Salaried Worker", "Emekli": "Retired"}
@@ -45,7 +46,7 @@ with st.expander("Kişisel Bilgiler", expanded=True):
 
 # 2. BÖLÜM: SOSYAL MEDYA
 with st.expander("Sosyal Medya Kullanımı"):
-    use_sm = st.radio("Sosyal medya kullanıyor musunuz?", ["Yes", "No"])
+    use_sm = st.radio("Sosyal medya kullanıyor musunuz?", list(answer_map.keys()))
     platforms = st.multiselect("Hangi platformları kullanıyorsunuz?", 
                                ["Facebook", "Instagram", "YouTube", "TikTok", "Twitter", "Discord"])
     time_tr = st.selectbox("Günlük ortalama kullanım süresi:", list(time_map_tr.keys()))
