@@ -35,6 +35,12 @@ with st.expander("Kişisel Bilgiler", expanded=True):
 
 with st.expander("Sosyal Medya Kullanımı"):
     use_sm = st.radio("6. Sosyal medya kullanıyor musunuz?", ["Yes", "No"])
+    platforms = st.multiselect(
+        "7. Yaygın olarak kullandığınız sosyal medya platformları nelerdir?",
+        ["Facebook", "Twitter", "Instagram", "YouTube", "Discord", "Reddit", "Pinterest", "TikTok"]
+    )
+    
+    platforms_str = ", ".join(platforms)
     time_spent = st.selectbox("8. Günlük ortalama kullanım süreniz:", 
                              ["Less than an Hour", "Between 1 and 2 hours", "Between 2 and 3 hours", 
                               "Between 3 and 4 hours", "Between 4 and 5 hours", "More than 5 hours"])
