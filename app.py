@@ -52,9 +52,18 @@ with st.expander("Sosyal Medya Kullanımı"):
 
 # 3. BÖLÜM: PSİKOLOJİK SORULAR
 with st.expander("Değerlendirme (1: Hiç, 5: Çok Fazla)"):
-    q13 = st.slider("Endişelerden ne kadar rahatsız oluyorsunuz?", 1, 5, 3)
-    q18 = st.slider("Ne sıklıkla depresif veya üzgün hissediyorsunuz?", 1, 5, 3)
-    q20 = st.slider("Ne sıklıkla uyku sorunu yaşıyorsunuz?", 1, 5, 3)
+    q9 = st.slider("9. Belirli bir amaç olmadan sosyal medyayı ne sıklıkla kullanıyorsunuz?", 1, 5, 3)
+    q10 = st.slider("10. Bir şeyle meşgulken sosyal medya ne sıklıkla sizin dikkatinizi dağıtıyor?", 1, 5, 3)
+    q11 = st.slider("11. Bir süre sosyal medya kullanmadığınızda huzursuz hissediyor musunuz?", 1, 5, 3)
+    q12 = st.slider("12. Ne kadar kolay dikkatiniz dağılıyor?", 1, 5, 3)
+    q13 = st.slider("13. Endişelerden ne kadar rahatsız oluyorsunuz?", 1, 5, 3)
+    q14 = st.slider("14. Konsantre olmakta zorlanıyor musunuz?", 1, 5, 3)
+    q15 = st.slider("15. Kendinizi diğer başarılı insanlarla ne sıklıkla karşılaştırıyorsunuz?", 1, 5, 3)
+    q16 = st.slider("16. Önceki soruyu takiben, genel olarak bu karşılaştırmalardan ne kadar etkileniyorsunuz?", 1, 5, 3)
+    q17 = st.slider("17. Onay (beğeni, yorum vb.) arama sıklığınız nedir?", 1, 5, 3)
+    q18 = st.slider("18. Depresif veya üzgün hissetme sıklığınız nedir?", 1, 5, 3)
+    q19 = st.slider("19. Günlük aktivitelere olan ilginiz ne sıklıkla dalgalanıyor?", 1, 5, 3)
+    q20 = st.slider("20. Ne sıklıkla uyku sorunlarıyla karşılaşıyorsunuz?", 1, 5, 3)
     # Diğer soruları da buraya ekleyebilirsin...
 
 if st.button("ANALİZ ET"):
@@ -67,17 +76,25 @@ if st.button("ANALİZ ET"):
     
     # Kullanıcıdan gelen Türkçe veriyi İngilizceye çevirerek data oluşturuyoruz
     data = {
-        '1. What is your age?': age,
-        '2. Gender': gender_map[gender_tr], # Erkek seçilirse Male gider
-        '3. Relationship Status': rel_map[rel_tr],
-        '4. Occupation Status': occ_map[occ_tr],
+       '1. What is your age?': age,
+        '2. Gender': gender,
+        '3. Relationship Status': rel_status,
+        '4. Occupation Status': occupation,
         '5. What type of organizations are you affiliated with?': org,
         '6. Do you use social media?': use_sm,
-        '7. What social media platforms do you commonly use?': ", ".join(platforms),
-        'Usage_Hours': numeric_time_map[time_map_tr[time_tr]],
+        'Usage_Hours': time_mapping[time_spent],
+        '9. How often do you find yourself using Social media without a specific purpose?': q9,
+        '10. How often do you get distracted by Social media when you are busy doing something?': q10,
+        '11. Do you feel restless if you haven\'t used Social media in a while?': q11,
+        '12. On a scale of 1 to 5, how easily distracted are you?': q12,
         '13. On a scale of 1 to 5, how much are you bothered by worries?': q13,
+        '14. Do you find it difficult to concentrate on things?': q14,
+        '15. On a scale of 1-5, how often do you compare yourself to other successful people through the use of social media?': q15,
+        '16. Following the previous question, how do you feel about these comparisons, generally speaking?': q16,
+        '17. How often do you look to seek validation from features of social media?': q17,
         '18. How often do you feel depressed or down?': q18,
-        '20. On a scale of 1 to 5, how often do you face issues regarding sleep?': q20,
+        '19. On a scale of 1 to 5, how frequently does your interest in daily activities fluctuate?': q19,
+        '20. On a scale of 1 to 5, how often do you face issues regarding sleep?': q20
         # Not: Modelin beklediği diğer sütunları da buraya 3 değerini vererek ekle
     }
 
