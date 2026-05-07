@@ -77,10 +77,10 @@ if st.button("ANALİZ ET"):
     
     # Kullanıcıdan gelen Türkçe veriyi İngilizceye çevirerek data oluşturuyoruz
     data = {
-       '1. What is your age?': age,
-        '2. Gender': gender,
-        '3. Relationship Status': rel_status,
-        '4. Occupation Status': occupation,
+        '1. What is your age?': age,
+        '2. Gender': gender_map[gender_tr], # Erkek seçilirse Male gider
+        '3. Relationship Status': rel_map[rel_tr],
+        '4. Occupation Status': occ_map[occ_tr],
         '5. What type of organizations are you affiliated with?': org,
         '6. Do you use social media?': use_sm,
         'Usage_Hours': time_mapping[time_spent],
