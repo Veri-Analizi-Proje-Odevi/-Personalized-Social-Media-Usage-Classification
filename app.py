@@ -117,6 +117,8 @@ if st.button("ANALİZ ET"):
     st.divider()
     if prediction == 1:
         st.error(f"⚠️ RİSK DURUMU: YÜKSEK (%{prob*100:.1f})")
+        st.write("Sosyal medya kullanım alışkanlıklarınız psikolojik sağlığınızı olumsuz etkiliyor olabilir. Bir uzmana danışmayı veya dijital detoks yapmayı düşünebilirsiniz.")
     else:
         st.success(f"✅ RİSK DURUMU: DÜŞÜK (%{prob*100:.1f})")
+        st.write("Tebrikler! Sosyal medya kullanım alışkanlıklarınız sağlıklı bir dengede görünüyor.")
     st.balloons()
