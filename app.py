@@ -65,7 +65,6 @@ with st.expander("Değerlendirme (1: Hiç, 5: Çok Fazla)"):
     q18 = st.slider("Depresif veya üzgün hissetme sıklığınız nedir?", 1, 5, 3)
     q19 = st.slider("Günlük aktivitelere olan ilginiz ne sıklıkla dalgalanıyor?", 1, 5, 3)
     q20 = st.slider("Ne sıklıkla uyku sorunlarıyla karşılaşıyorsunuz?", 1, 5, 3)
-    # Diğer soruları da buraya ekleyebilirsin...
 
 if st.button("ANALİZ ET"):
     # Zaman Mapping (Sayısal Değerler için)
@@ -78,7 +77,7 @@ if st.button("ANALİZ ET"):
     # Kullanıcıdan gelen Türkçe veriyi İngilizceye çevirerek data oluşturuyoruz
     data = {
         '1. What is your age?': age,
-        '2. Gender': gender_map[gender_tr], # Erkek seçilirse Male gider
+        '2. Gender': gender_map[gender_tr], 
         '3. Relationship Status': rel_map[rel_tr],
         '4. Occupation Status': occ_map[occ_tr],
         '5. What type of organizations are you affiliated with?': org,
@@ -100,7 +99,6 @@ if st.button("ANALİZ ET"):
         # Not: Modelin beklediği diğer sütunları da buraya 3 değerini vererek ekle
     }
 
-    # DataFrame ve dummy işlemleri (Aynı kalıyor)
     df_input = pd.DataFrame([data])
     df_encoded = pd.get_dummies(df_input)
     
